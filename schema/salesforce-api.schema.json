@@ -43,17 +43,20 @@
         "membershipNo": {
           "type": "string",
           "example": 1234567,
-          "nullable": true
+          "nullable": true,
+          "description": "The supporter's membership number - not present for supporters who have never been members."
         },
         "memberRef": {
           "type": "string",
           "example": 1234567,
-          "nullable": false
+          "nullable": false,
+          "description": "internal ramblers reference - present on all supporters and preserved across lead conversions."
         },
         "contactId": {
           "type": "string",
           "example": "0033z000035G6MhAAK",
-          "nullable": false
+          "nullable": false,
+          "description": "Internal Salesforce Id - Note this can change on a record merge or lead conversion"
         },
         "title": {
           "type": "string",
@@ -96,7 +99,8 @@
         "friendlyName": {
           "type": "string",
           "example": "John",
-          "nullable": false
+          "nullable": false,
+          "description": "The name you'd typically use in the \"Dear XXX\" line of an email"
         },
         "membershipStatus": {
           "type": "string",
