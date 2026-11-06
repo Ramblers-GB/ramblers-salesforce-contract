@@ -1,18 +1,23 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Ramblers Team Emails API",
-  "description": "Mirrors the published upstream spec at https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.0. Generated from openapi/upstream.json; check-schema-sync verifies both against the live SwaggerHub document.",
+  "description": "Mirrors the published upstream spec at https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.2. Generated from openapi/upstream.json; check-schema-sync verifies both against the live SwaggerHub document.",
   "$defs": {
     "supporterUpdateSuccess": {
       "type": "object",
       "properties": {
-        "responseText": {
+        "responseType": {
           "type": "string",
           "enum": [
             "Update processed",
+            "Update logged for future processing",
             "Bounce logged"
           ],
           "example": "Update processed"
+        },
+        "responseText": {
+          "type": "string",
+          "example": "update scheduled for overnight processing"
         }
       }
     },
@@ -26,7 +31,9 @@
             "Email not recognised for this group",
             "Invalid email",
             "System unavilable",
-            "Required field missing"
+            "Required field missing",
+            "Unauthorised",
+            "Bad request"
           ],
           "example": "Email not recognised for this group"
         },
@@ -217,7 +224,7 @@
           "example": true,
           "nullable": false
         },
-        "canViewMemberDate": {
+        "canViewVolunteerData": {
           "type": "boolean",
           "example": true,
           "nullable": false

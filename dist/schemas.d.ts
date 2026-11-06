@@ -6,20 +6,20 @@ export declare const volunteerRoleSchema: z.ZodObject<{
     roleName: z.ZodString;
     startDate: z.ZodString;
     displayName: z.ZodNullable<z.ZodString>;
-    walkLeaderStatus: z.ZodNullable<z.ZodString>;
-    wellbeingWalksRole: z.ZodBoolean;
+    walkLeaderStatus: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    wellbeingWalksRole: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     roleName: string;
     startDate: string;
     displayName: string | null;
-    walkLeaderStatus: string | null;
-    wellbeingWalksRole: boolean;
+    walkLeaderStatus?: string | null | undefined;
+    wellbeingWalksRole?: boolean | undefined;
 }, {
     roleName: string;
     startDate: string;
     displayName: string | null;
-    walkLeaderStatus: string | null;
-    wellbeingWalksRole: boolean;
+    walkLeaderStatus?: string | null | undefined;
+    wellbeingWalksRole?: boolean | undefined;
 }>;
 export declare const supporterSchema: z.ZodObject<{
     membershipNo: z.ZodNullable<z.ZodString>;
@@ -46,20 +46,20 @@ export declare const supporterSchema: z.ZodObject<{
         roleName: z.ZodString;
         startDate: z.ZodString;
         displayName: z.ZodNullable<z.ZodString>;
-        walkLeaderStatus: z.ZodNullable<z.ZodString>;
-        wellbeingWalksRole: z.ZodBoolean;
+        walkLeaderStatus: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+        wellbeingWalksRole: z.ZodOptional<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }, {
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }>, "many">;
     noWalkProgram: z.ZodBoolean;
     noCampaigning: z.ZodBoolean;
@@ -68,7 +68,7 @@ export declare const supporterSchema: z.ZodObject<{
     canEmailMembers: z.ZodBoolean;
     canEmailWellbeingWalkers: z.ZodBoolean;
     canViewMemberData: z.ZodBoolean;
-    canViewMemberDate: z.ZodBoolean;
+    canViewVolunteerData: z.ZodBoolean;
     emailConsent: z.ZodBoolean;
     emailConsentLastUpdated: z.ZodNullable<z.ZodString>;
     postConsent: z.ZodBoolean;
@@ -101,8 +101,8 @@ export declare const supporterSchema: z.ZodObject<{
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }[];
     noWalkProgram: boolean;
     noCampaigning: boolean;
@@ -111,7 +111,7 @@ export declare const supporterSchema: z.ZodObject<{
     canEmailMembers: boolean;
     canEmailWellbeingWalkers: boolean;
     canViewMemberData: boolean;
-    canViewMemberDate: boolean;
+    canViewVolunteerData: boolean;
     emailConsent: boolean;
     emailConsentLastUpdated: string | null;
     postConsent: boolean;
@@ -144,8 +144,8 @@ export declare const supporterSchema: z.ZodObject<{
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }[];
     noWalkProgram: boolean;
     noCampaigning: boolean;
@@ -154,7 +154,7 @@ export declare const supporterSchema: z.ZodObject<{
     canEmailMembers: boolean;
     canEmailWellbeingWalkers: boolean;
     canViewMemberData: boolean;
-    canViewMemberDate: boolean;
+    canViewVolunteerData: boolean;
     emailConsent: boolean;
     emailConsentLastUpdated: string | null;
     postConsent: boolean;
@@ -188,20 +188,20 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
         roleName: z.ZodString;
         startDate: z.ZodString;
         displayName: z.ZodNullable<z.ZodString>;
-        walkLeaderStatus: z.ZodNullable<z.ZodString>;
-        wellbeingWalksRole: z.ZodBoolean;
+        walkLeaderStatus: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+        wellbeingWalksRole: z.ZodOptional<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }, {
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }>, "many">;
     noWalkProgram: z.ZodBoolean;
     noCampaigning: z.ZodBoolean;
@@ -210,7 +210,7 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
     canEmailMembers: z.ZodBoolean;
     canEmailWellbeingWalkers: z.ZodBoolean;
     canViewMemberData: z.ZodBoolean;
-    canViewMemberDate: z.ZodBoolean;
+    canViewVolunteerData: z.ZodBoolean;
     emailConsent: z.ZodBoolean;
     emailConsentLastUpdated: z.ZodNullable<z.ZodString>;
     postConsent: z.ZodBoolean;
@@ -243,8 +243,8 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }[];
     noWalkProgram: boolean;
     noCampaigning: boolean;
@@ -253,7 +253,7 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
     canEmailMembers: boolean;
     canEmailWellbeingWalkers: boolean;
     canViewMemberData: boolean;
-    canViewMemberDate: boolean;
+    canViewVolunteerData: boolean;
     emailConsent: boolean;
     emailConsentLastUpdated: string | null;
     postConsent: boolean;
@@ -286,8 +286,8 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
         roleName: string;
         startDate: string;
         displayName: string | null;
-        walkLeaderStatus: string | null;
-        wellbeingWalksRole: boolean;
+        walkLeaderStatus?: string | null | undefined;
+        wellbeingWalksRole?: boolean | undefined;
     }[];
     noWalkProgram: boolean;
     noCampaigning: boolean;
@@ -296,7 +296,7 @@ export declare const supportersResponseSchema: z.ZodArray<z.ZodObject<{
     canEmailMembers: boolean;
     canEmailWellbeingWalkers: boolean;
     canViewMemberData: boolean;
-    canViewMemberDate: boolean;
+    canViewVolunteerData: boolean;
     emailConsent: boolean;
     emailConsentLastUpdated: string | null;
     postConsent: boolean;

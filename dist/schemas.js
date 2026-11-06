@@ -25,8 +25,8 @@ export const volunteerRoleSchema = z.object({
     roleName: z.string(),
     startDate: z.string().date(),
     displayName: z.string().nullable(),
-    walkLeaderStatus: z.string().nullable(),
-    wellbeingWalksRole: z.boolean(),
+    walkLeaderStatus: z.string().nullable().optional(),
+    wellbeingWalksRole: z.boolean().optional(),
 });
 export const supporterSchema = z.object({
     membershipNo: z.string().nullable(),
@@ -57,7 +57,7 @@ export const supporterSchema = z.object({
     canEmailMembers: z.boolean(),
     canEmailWellbeingWalkers: z.boolean(),
     canViewMemberData: z.boolean(),
-    canViewMemberDate: z.boolean(),
+    canViewVolunteerData: z.boolean(),
     emailConsent: z.boolean(),
     emailConsentLastUpdated: z.string().date().nullable(),
     postConsent: z.boolean(),

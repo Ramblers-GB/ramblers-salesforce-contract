@@ -10,7 +10,7 @@ type JsonValue =
   | JsonValue[]
   | { [k: string]: JsonValue };
 
-const UPSTREAM_URL = "https://api.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.0";
+const UPSTREAM_URL = "https://api.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.2";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -77,7 +77,7 @@ async function main(): Promise<void> {
   }
 
   if (failures.length === 0) {
-    console.log(`Schema sync check: OK (${defNames.length} defs in sync with SwaggerHub 1.0.0)`);
+    console.log(`Schema sync check: OK (${defNames.length} defs in sync with SwaggerHub 1.0.2)`);
     return;
   }
 

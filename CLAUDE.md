@@ -15,7 +15,7 @@
 - **Architecture**: Node 20+, pure TypeScript, zero runtime web/server framework. Just types, Zod schemas, an OpenAPI builder, and an Insight Hub column table.
 - **Repository**: https://github.com/nbarrett/ramblers-salesforce-contract
 - **Source**: `src/` (TypeScript only). `dist/` is committed build output for git-tag distribution.
-- **Schema source**: `openapi/upstream.json` — verbatim mirror of the published upstream spec [JAMESKEARS/ramblers-group-email 1.0.0](https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.0). `schema/salesforce-api.schema.json` is generated from it. The `check-schema-sync` script fetches the live SwaggerHub document and verifies both stay true. Mirror the upstream verbatim, quirks and typos included; upstream fixes flow through a reviewed mirror update.
+- **Schema source**: `openapi/upstream.json` is a verbatim mirror of the published upstream spec [JAMESKEARS/ramblers-group-email 1.0.2](https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.2). `schema/salesforce-api.schema.json` is generated from it. The `check-schema-sync` script fetches the live SwaggerHub document and verifies both stay true. Mirror the upstream verbatim, quirks included; live payload omissions that the spec still lists are handled only in the Zod schemas, not by editing the OpenAPI mirror.
 
 ## Code Style
 

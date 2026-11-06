@@ -8,7 +8,7 @@
   ],
   "info": {
     "description": "draft",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "title": "Ramblers Team Emails",
     "contact": {
       "email": "membership@ramblers.org.uk"
@@ -224,13 +224,18 @@
       "supporterUpdateSuccess": {
         "type": "object",
         "properties": {
-          "responseText": {
+          "responseType": {
             "type": "string",
             "enum": [
               "Update processed",
+              "Update logged for future processing",
               "Bounce logged"
             ],
             "example": "Update processed"
+          },
+          "responseText": {
+            "type": "string",
+            "example": "update scheduled for overnight processing"
           }
         }
       },
@@ -244,7 +249,9 @@
               "Email not recognised for this group",
               "Invalid email",
               "System unavilable",
-              "Required field missing"
+              "Required field missing",
+              "Unauthorised",
+              "Bad request"
             ],
             "example": "Email not recognised for this group"
           },
@@ -435,7 +442,7 @@
             "example": true,
             "nullable": false
           },
-          "canViewMemberDate": {
+          "canViewVolunteerData": {
             "type": "boolean",
             "example": true,
             "nullable": false

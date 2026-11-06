@@ -2,7 +2,15 @@
 
 All notable changes to `@ramblers/sf-contract` are recorded here. The package follows [semver](https://semver.org/): a major version bump signals a breaking change to the wire format, types or schemas. Both consumers (`ramblers-salesforce-mock` and `ramblers-salesforce-server`) pin a tag and update deliberately.
 
-## [v1.0.2] — 2026-07-23
+## [v1.0.3] - 2026-11-06
+
+Mirrors published Ramblers Team Emails **1.0.2** on SwaggerHub (same supporter schema as 1.0.1; defaultVersion is 1.0.1). Breaking for consumers that still read `canViewMemberDate`.
+
+- `canViewMemberDate` replaced by `canViewVolunteerData` (boolean), matching Head office 1.0.1.
+- `volunteerRoles[].walkLeaderStatus` and `volunteerRoles[].wellbeingWalksRole` are optional on the Zod schema because the live Azure `get_supporters` payload omits them even though 1.0.1/1.0.2 still list them.
+- `openapi/upstream.json` and `schema/salesforce-api.schema.json` now track SwaggerHub 1.0.2.
+
+## [v1.0.2] - 2026-07-23
 
 - Added a CommonJS entry point alongside the existing ESM build so NGX server tests and other CommonJS consumers can use the shared runtime validators.
 

@@ -32,8 +32,8 @@ export interface VolunteerRole {
   roleName: string;
   startDate: string;
   displayName: string | null;
-  walkLeaderStatus: string | null;
-  wellbeingWalksRole: boolean;
+  walkLeaderStatus?: string | null;
+  wellbeingWalksRole?: boolean;
 }
 
 export interface Supporter {
@@ -65,7 +65,7 @@ export interface Supporter {
   canEmailMembers: boolean;
   canEmailWellbeingWalkers: boolean;
   canViewMemberData: boolean;
-  canViewMemberDate: boolean;
+  canViewVolunteerData: boolean;
   emailConsent: boolean;
   emailConsentLastUpdated: string | null;
   postConsent: boolean;

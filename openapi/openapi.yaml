@@ -4,7 +4,7 @@ servers:
     description: Reference mock server
 info:
   description: draft
-  version: 1.0.0
+  version: 1.0.2
   title: Ramblers Team Emails
   contact:
     email: membership@ramblers.org.uk
@@ -150,12 +150,16 @@ components:
     supporterUpdateSuccess:
       type: object
       properties:
-        responseText:
+        responseType:
           type: string
           enum:
             - Update processed
+            - Update logged for future processing
             - Bounce logged
           example: Update processed
+        responseText:
+          type: string
+          example: update scheduled for overnight processing
     supporterUpdateError:
       type: object
       description: Note - Errors are not final
@@ -167,6 +171,8 @@ components:
             - Invalid email
             - System unavilable
             - Required field missing
+            - Unauthorised
+            - Bad request
           example: Email not recognised for this group
         errorDescription:
           type: string
@@ -324,7 +330,7 @@ components:
           type: boolean
           example: true
           nullable: false
-        canViewMemberDate:
+        canViewVolunteerData:
           type: boolean
           example: true
           nullable: false

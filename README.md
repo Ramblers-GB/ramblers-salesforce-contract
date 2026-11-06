@@ -2,7 +2,7 @@
 
 Wire-format contract for the Ramblers Team Emails API. The shared piece of code that the mock server and NGX-Ramblers depend on, so neither can disagree about the shape of the data on the wire.
 
-From v1.0.0 the contract mirrors the API published by Ramblers Head office: [JAMESKEARS/ramblers-group-email 1.0.0](https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.0) on SwaggerHub. Earlier versions (v0.x) carried the jointly-proposed shape from [nbarrett/ngx-ramblers#209](https://github.com/nbarrett/ngx-ramblers/issues/209); that proposal is superseded by the published upstream spec, which this package now tracks verbatim, quirks included, until the upstream fixes them.
+From v1.0.3 the contract mirrors [JAMESKEARS/ramblers-group-email 1.0.2](https://app.swaggerhub.com/apis/JAMESKEARS/ramblers-group-email/1.0.2) on SwaggerHub (same supporter schema as 1.0.1). v1.0.0–v1.0.2 of this package mirrored 1.0.0. Earlier package versions (v0.x) carried the jointly-proposed shape from [nbarrett/ngx-ramblers#209](https://github.com/nbarrett/ngx-ramblers/issues/209); that proposal is superseded.
 
 ## What lives here
 
